@@ -10,7 +10,15 @@ function convertToRoman(num) {
     };
 
   //your code here
-
+	const prev = 0;
+	for(b in obj){
+		if(num > obj[b][1]){
+			str += obj[prev];
+			return convertToRoman(num - obj[prev][1])
+		}else{
+			prev.push(b);
+		}
+	}
 }
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
 
@@ -18,6 +26,6 @@ function convertToRoman(num) {
 
 
 
-
+let str = "";
 // do not edit below this line
 module.exports = convertToRoman
